@@ -1,3 +1,5 @@
+use toko;
+
 create table address
 (
     street      varchar(100),
