@@ -34,3 +34,13 @@ VALUES ('P006', 'Es Teh Manis', 'Es teh manis paling manis', '5000','200'),
 ('P009', 'Jus Alpukat', 'Bikin kenyang', '8000','120'),
 ('P010', 'Jus Mangga', 'Asem & Manis', '8000','90');
 
+alter table product
+add catagory_id VARCHAR(100);
+
+alter table product
+add constraint fk_catagories_product
+Foreign Key (catagory_id) REFERENCES catagories(id);
+
+update product
+set catagory_id = 'C001'
+where id IN ('P001', 'P002', 'P003', 'P004', 'P005');
